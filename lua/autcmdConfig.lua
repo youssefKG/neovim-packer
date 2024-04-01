@@ -1,0 +1,8 @@
+-- en before write the buffer i wanna formt
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = { "*.c" },
+-- 	callback = function(args)
+-- 		print("format")
+-- 		vim.lsp.buf.format({ async = true })
+-- 	end,
+-- })
