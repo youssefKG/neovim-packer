@@ -87,8 +87,8 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = "path" },
-		{ name = "buffer" },
 		{ name = "nvim_lsp", maxlength = 2 },
+		{ name = "buffer" },
 		{ name = "luasnip" },
 		{ name = "vsnip" },
 	}),
@@ -105,6 +105,9 @@ cmp.setup({
 			item.menu = menu_icon[entry.source.name]
 			return item
 		end,
+	},
+	completion = {
+		completeopt = "menu,menuone,noinsert",
 	},
 })
 -- require("lspkind").init({
