@@ -10,4 +10,5 @@ vim.opt.scrolloff = 8
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.softtabstop = 4
+vim.opt.foldmethod = "manual"
 vim.opt.completeopt = { "menu", "menuone", "noselect" }

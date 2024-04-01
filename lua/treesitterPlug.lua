@@ -1,4 +1,3 @@
-require("nvim-treesitter.install").prefer_git = false
 require("nvim-treesitter.configs").setup({
 	prefer_git = false,
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
