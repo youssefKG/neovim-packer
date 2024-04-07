@@ -76,14 +76,8 @@ cmp.setup({
 	},
 
 	window = {
-		completion = {
-			max_width = 70,
-			pumheight = 12,
-		},
-		documentation = {
-			max_width = 70,
-			max_heigth = 1,
-		},
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
