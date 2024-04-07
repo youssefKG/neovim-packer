@@ -9,7 +9,10 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 --keymap("n" , "<leader>e", ":Lex 20<CR>" , opts)
+-- copy a word
+keymap("n", "yw", "yiw", opts)
 -- resize window
+--keymap
 keymap("n", "<C-left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-right>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-up>", ":resize +2<CR>", opts)

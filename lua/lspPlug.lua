@@ -1,18 +1,18 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lspconfig = require("lspconfig")
+local opts = { noremap = true, silent = true }
+local lsp_kind = require("lspkind")
+-- setup your lsp servers as usual
 require("mason").setup()
 -- LSP Mappings + Settings -----------------------------------------------------
 -- modified from: https://github.com/neovim/nvim-lspconfig#suggested-configuration
-local opts = { noremap = true, silent = true }
 -- Basic diagnostic mappings, these will navigate to or display diagnostics
-vim.keymap.set("n", "<leader>d", vim.diagnostic.goto_next, opts)
+-- vim.keymap.set("n", "<leader>d", vim.diagnostic.goto_next, opts)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-
-local lspconfig = require("lspconfig")
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "tsserver", "clangd", "cssls" },
+	ensure_installed = { "lua_ls", "tsserver", "clangd", "cssls", "jdtls" },
 })
 require("luasnip.loaders.from_vscode").lazy_load()
 local sign = function(opts)
@@ -22,12 +22,12 @@ local sign = function(opts)
 		numhl = "",
 	})
 end
-
 sign({ name = "DiagnosticSignError", text = "✘" })
 sign({ name = "DiagnosticSignWarn", text = "▲" })
 sign({ name = "DiagnosticSignHint", text = "⚑" })
 sign({ name = "DiagnosticSignInfo", text = "»" })
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+
 	border = "rounded",
 })
 --
@@ -45,7 +45,7 @@ local on_attach = function(client, bufnr)
 	require("luasnip.loaders.from_vscode").lazy_load()
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+	-- vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
 	vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, bufopts)
 	vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
@@ -55,7 +55,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>f", function()
 		vim.lsp.buf.format({ async = true })
 	end, bufopts)
-	vim.opt.completeopt = { "menu", "menuone", "noselect" }
+	vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 end
 
 lspconfig.tsserver.setup({ capabilities = capabilities, on_attach = on_attach })
@@ -64,6 +64,8 @@ lspconfig.tailwindcss.setup({ capabilities = capabilities, on_attach = on_attach
 lspconfig.lua_ls.setup({ capabilities = capabilities, on_attach = on_attach })
 lspconfig.cssls.setup({ capabilities = capabilities, on_attach = on_attach })
 lspconfig.clangd.setup({ capabilities = capabilities, on_attach = on_attach })
+lspconfig.jdtls.setup({ capabilities = capabilities, on_attach = on_attach })
+
 -- autoComplet
 local cmp = require("cmp")
 cmp.setup({
@@ -72,9 +74,16 @@ cmp.setup({
 			require("luasnip").lsp_expand(args.body)
 		end,
 	},
+
 	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
+		completion = {
+			max_width = 70,
+			pumheight = 12,
+		},
+		documentation = {
+			max_width = 70,
+			max_heigth = 1,
+		},
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -86,76 +95,17 @@ cmp.setup({
 		["<C-n>"] = cmp.mapping.select_next_item(select_opts),
 	}),
 	sources = cmp.config.sources({
-		{ name = "path" },
 		{ name = "nvim_lsp", maxlength = 2 },
+		{ name = "vsnip" },
+		{ name = "path" },
 		{ name = "buffer" },
 		{ name = "luasnip" },
-		{ name = "vsnip" },
 	}),
 	formatting = {
 		fields = { "menu", "abbr", "kind" },
-		format = function(entry, item)
-			local menu_icon = {
-				nvim_lsp = "λ",
-				luasnip = "⋗",
-				buffer = "Ω",
-				path = "🖫",
-			}
-
-			item.menu = menu_icon[entry.source.name]
-			return item
-		end,
+		format = lsp_kind.cmp_format({ maxwidth = 50, ellipsis_char = "..." }),
 	},
 	completion = {
 		completeopt = "menu,menuone,noinsert",
 	},
 })
--- require("lspkind").init({
--- 	-- DEPRECATED (use mode instead): enables text annotations
--- 	--
--- 	-- default: true
--- 	-- with_text = true,
---
--- 	-- defines how annotations are shown
--- 	-- default: symbol
--- 	-- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
--- 	mode = "symbol_text",
---
--- 	-- default symbol map
--- 	-- can be either 'default' (requires nerd-fonts font) or
--- 	-- 'codicons' for codicon preset (requires vscode-codicons font)
--- 	--
--- 	-- default: 'default'
--- 	preset = "codicons",
---
--- 	-- override preset symbols
--- 	--
--- 	-- default: {}
--- 	symbol_map = {
--- 		Text = "󰉿",
--- 		Method = "󰆧",
--- 		Function = "󰊕",
--- 		Constructor = "",
--- 		Field = "󰜢",
--- 		Variable = "󰀫",
--- 		Class = "󰠱",
--- 		Interface = "",
--- 		Module = "",
--- 		Property = "󰜢",
--- 		Unit = "󰑭",
--- 		Value = "󰎠",
--- 		Enum = "",
--- 		Keyword = "󰌋",
--- 		Snippet = "",
--- 		Color = "󰏘",
--- 		File = "󰈙",
--- 		Reference = "󰈇",
--- 		Folder = "󰉋",
--- 		EnumMember = "",
--- 		Constant = "󰏿",
--- 		Struct = "󰙅",
--- 		Event = "",
--- 		Operator = "󰆕",
--- 		TypeParameter = "",
--- 	},
--- })

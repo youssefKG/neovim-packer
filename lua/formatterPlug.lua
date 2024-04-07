@@ -11,6 +11,7 @@ require("conform").setup({
 		css = { "prettier" },
 		html = { "prettier" },
 		C = { "clang-format", "ast-grep" },
+		java = { "jdtls", "ast-grep" },
 	},
 })
 vim.api.nvim_create_autocmd("BufWritePre", {

@@ -12,3 +12,7 @@ vim.opt.autoindent = true
 vim.opt.softtabstop = 4
 vim.opt.foldmethod = "manual"
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
+vim.opt.background = "dark"
+vim.opt.signcolumn = "yes"
+vim.opt.numberwidth = 6
+vim.opt.pumheight = 15

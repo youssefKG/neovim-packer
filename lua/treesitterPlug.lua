@@ -1,7 +1,7 @@
 require("nvim-treesitter.configs").setup({
 	prefer_git = false,
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
-	ensure_installed = { "c", "javascript", "todotxt", "lua", "typescript" },
+	ensure_installed = { "c", "javascript", "todotxt", "lua", "typescript", "java" },
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,
 	-- Automatically install missing parsers when entering buffer
@@ -14,13 +14,16 @@ require("nvim-treesitter.configs").setup({
 		enable_rename = true,
 		enable_close = true,
 		enable_close_on_slash = true,
-		filetypes = { "html", "xml", "typescript", "javascriptreact", "javascript", "typescriptreact" },
+		filetypes = { "html", "xml", "typescript", "tsx", "javascriptreact", "javascript", "typescriptreact" },
 	},
 	highlight = {
 		enable = true,
 		disable = { "txt" },
 	},
 	indent = {
+		enable = true,
+	},
+	rainbow = {
 		enable = true,
 	},
 })

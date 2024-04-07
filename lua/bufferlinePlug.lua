@@ -2,8 +2,9 @@ vim.opt.termguicolors = true
 require("bufferline").setup({
 	options = {
 		mode = "buffers",
-		separator_style = "slant",
+		separator_style = "thick",
 		show_buffer_icons = true,
+		indicator = "underline",
 	},
 	highlights = {
 		separator = {
@@ -12,10 +13,6 @@ require("bufferline").setup({
 		},
 		separator_selected = {
 			guifg = "#073642",
-		},
-		buffer_selected = {
-			guifg = "#fdf6e3",
-			gui = "bold",
 		},
 	},
 })

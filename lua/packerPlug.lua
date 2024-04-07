@@ -12,12 +12,6 @@ return require("packer").startup(function(use)
 	-- web dev icons
 	use("nvim-tree/nvim-web-devicons")
 	-- theme solarized osaka
-	use({
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	})
 	use({ "ellisonleao/gruvbox.nvim" })
 	--neo-tree
 	use({
@@ -39,19 +33,20 @@ return require("packer").startup(function(use)
 	-- lsp
 	-- ...other plugins before and after...
 	-- LSP integration and autocomplete
+	use("folke/neoconf.nvim")
 	use("neovim/nvim-lspconfig")
 	use("saadparwaiz1/cmp_luasnip")
 	use("williamboman/mason-lspconfig.nvim")
 	use("williamboman/mason.nvim")
 	use("hrsh7th/cmp-vsnip")
-	use("hrsh7th/vim-vsnip")
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("onsails/lspkind.nvim")
+	use("L3MON4D3/LuaSnip")
+	use("rafamadriz/friendly-snippets")
 	-- Prettier
-	use("prettier/vim-prettier", { run = "npm  install --frozen-lockfile --producton" })
 	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -59,7 +54,6 @@ return require("packer").startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	use("L3MON4D3/LuaSnip")
 	-- auto paires
 	use({
 		"windwp/nvim-autopairs",
@@ -90,6 +84,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("rose-pine/neovim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("luochen1990/rainbow")
 	use({
 		"numToStr/Comment.nvim",
@@ -102,6 +97,15 @@ return require("packer").startup(function(use)
 	-- auto-tag
 	use("windwp/nvim-ts-autotag")
 	-- nerd tree
-	use("preservim/nerdtree")
 	use("mbbill/undotree")
+	use({
+		"stevearc/aerial.nvim",
+		config = function()
+			require("aerial").setup()
+		end,
+	})
+	-- lsp saga
+	use({
+		"nvimdev/lspsaga.nvim",
+	})
 end)
