@@ -120,6 +120,6 @@ require("catppuccin").setup({
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
 })
-
+require("catppuccin").load()
 -- setup must be called before loading
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme rose-pine")

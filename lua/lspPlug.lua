@@ -27,7 +27,6 @@ sign({ name = "DiagnosticSignWarn", text = "▲" })
 sign({ name = "DiagnosticSignHint", text = "⚑" })
 sign({ name = "DiagnosticSignInfo", text = "»" })
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-
 	border = "rounded",
 })
 --
@@ -56,6 +55,7 @@ local on_attach = function(client, bufnr)
 		vim.lsp.buf.format({ async = true })
 	end, bufopts)
 	vim.opt.completeopt = { "menu", "menuone", "noinsert" }
+	vim.keymap.set("n", "<c-.>", "<cmd>Lspsaga code_action<Cr>", opts)
 end
 
 lspconfig.tsserver.setup({ capabilities = capabilities, on_attach = on_attach })

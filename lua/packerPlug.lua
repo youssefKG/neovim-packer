@@ -83,6 +83,7 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
+	--themes
 	use("rose-pine/neovim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("luochen1990/rainbow")
@@ -92,7 +93,7 @@ return require("packer").startup(function(use)
 			require("Comment").setup()
 		end,
 	})
-	-- Using Packer
+	use("lifepillar/vim-solarized8")
 	use("navarasu/onedark.nvim")
 	-- auto-tag
 	use("windwp/nvim-ts-autotag")
@@ -105,38 +106,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	-- lsp saga
-	use({
-		"nvimdev/lspsaga.nvim",
-	})
-	-- ai assistant
-	-- use({
-	-- 	"jackMort/ChatGPT.nvim",
-	-- 	config = function()
-	-- 		require("chatgpt").setup()
-	-- 	end,
-	-- 	requires = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"folke/trouble.nvim",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- })
-	use({
-		"Exafunction/codeium.vim",
-		config = function()
-			-- Change '<C-g>' here to any keycode you like.
-			vim.keymap.set("i", "<C-g>", function()
-				return vim.fn["codeium#Accept"]()
-			end, { expr = true, silent = true })
-			vim.keymap.set("i", "<c-;>", function()
-				return vim.fn["codeium#CycleCompletions"](1)
-			end, { expr = true, silent = true })
-			vim.keymap.set("i", "<c-,>", function()
-				return vim.fn["codeium#CycleCompletions"](-1)
-			end, { expr = true, silent = true })
-			vim.keymap.set("i", "<c-x>", function()
-				return vim.fn["codeium#Clear"]()
-			end, { expr = true, silent = true })
-		end,
-	})
+	use({ "nvimdev/lspsaga.nvim" })
+	--ai
+	use({ "Exafunction/codeium.vim" })
 end)
