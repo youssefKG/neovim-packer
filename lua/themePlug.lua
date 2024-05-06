@@ -3,8 +3,8 @@
 require("gruvbox").setup({
 	terminal_colors = true, -- add neovim terminal colors
 	undercurl = true,
-	underline = true,
-	bold = false,
+	underline = false,
+	bold = true,
 	italic = {
 		strings = false,
 		emphasis = false,
@@ -16,7 +16,7 @@ require("gruvbox").setup({
 	invert_selection = false,
 	invert_signs = false,
 	invert_tabline = false,
-	invert_intend_guides = false,
+	invert_intend_guides = true,
 	inverse = true, -- invert background for search, diffs, statuslines and errors
 	contrast = "hard", -- can be "hard", "soft" or empty string
 	palette_overrides = {},
@@ -120,6 +120,13 @@ require("catppuccin").setup({
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
 })
-require("catppuccin").load()
+
+vim.g.gruvbox_material_background = "hard"
+vim.g.gruvbox_material_transparent_background = 1
+-- vim.cmd("colorscheme gruvbox-material")
+vim.g.everforest_transparent_background = 1
+vim.g.everforest_background = "hard"
+-- vim.cmd("colorscheme everforest")
+-- Lua initialization file
 -- setup must be called before loading
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme gruvbox")

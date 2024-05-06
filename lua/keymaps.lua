@@ -1,7 +1,6 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 --make space as leader key
-keymap("", "<space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 ---------------------mods navigation --------------------
@@ -58,6 +57,10 @@ keymap("n", "<leader>bp", ":bn <CR>", opts)
 -------------------- neotree --------------------
 vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts) -- toogle neotree explore
 ---------------------- neotree --------------------
+
+--------------------UndoTree -------------------
+keymap("n", "<leader>u", "<cmd>UndotreeToggle <CR>", opts)
+--------------------UndoTree -------------------
 
 -------------------- Clean search -------------------
 keymap("n", "<Esc>", "<cmd>noh <CR>", opts)

@@ -91,6 +91,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\aerial.nvim",
     url = "https://github.com/stevearc/aerial.nvim"
   },
+  ["ayu-vim"] = {
+    loaded = true,
+    path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\ayu-vim",
+    url = "https://github.com/ayu-theme/ayu-vim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufferline.nvim",
@@ -127,26 +132,39 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["codeium.vim"] = {
-    config = { "\27LJ\2\n-\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\19codeium#Accept\afn\bvim;\0\0\3\0\3\0\0056\0\0\0009\0\1\0009\0\2\0)\2\1\0D\0\2\0\29codeium#CycleCompletions\afn\bvim;\0\0\3\0\3\0\0056\0\0\0009\0\1\0009\0\2\0)\2ÿÿD\0\2\0\29codeium#CycleCompletions\afn\bvim,\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\18codeium#Clear\afn\bvimü\1\1\0\6\0\16\0!6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0003\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0003\4\b\0005\5\t\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\n\0003\4\v\0005\5\f\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\r\0003\4\14\0005\5\15\0B\0\5\1K\0\1\0\1\0\2\vsilent\2\texpr\2\0\n<c-x>\1\0\2\vsilent\2\texpr\2\0\n<c-,>\1\0\2\vsilent\2\texpr\2\0\n<c-;>\1\0\2\vsilent\2\texpr\2\0\n<C-g>\6i\bset\vkeymap\bvim\0" },
     loaded = true,
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\codeium.vim",
     url = "https://github.com/Exafunction/codeium.vim"
   },
   ["conform.nvim"] = {
-    config = { "\27LJ\2\nU\0\0\4\0\5\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\0\nsetup\fconform\frequire\0" },
     loaded = true,
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
+  },
+  everforest = {
+    loaded = true,
+    path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\everforest",
+    url = "https://github.com/sainnhe/everforest"
   },
   ["friendly-snippets"] = {
     loaded = true,
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
+  ["image.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\image.nvim",
+    url = "https://github.com/3rd/image.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -183,11 +201,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
-  ["neoconf.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neoconf.nvim",
-    url = "https://github.com/folke/neoconf.nvim"
-  },
   neovim = {
     loaded = true,
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neovim",
@@ -210,6 +223,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14colorizer\frequire\0" },
     loaded = true,
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
@@ -269,6 +283,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-nightfly-colors"] = {
+    loaded = true,
+    path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-nightfly-colors",
+    url = "https://github.com/bluz71/vim-nightfly-colors"
+  },
   ["vim-solarized8"] = {
     loaded = true,
     path = "C:\\Users\\sss\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-solarized8",
@@ -282,26 +301,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: codeium.vim
-time([[Config for codeium.vim]], true)
-try_loadstring("\27LJ\2\n-\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\19codeium#Accept\afn\bvim;\0\0\3\0\3\0\0056\0\0\0009\0\1\0009\0\2\0)\2\1\0D\0\2\0\29codeium#CycleCompletions\afn\bvim;\0\0\3\0\3\0\0056\0\0\0009\0\1\0009\0\2\0)\2ÿÿD\0\2\0\29codeium#CycleCompletions\afn\bvim,\0\0\2\0\3\0\0046\0\0\0009\0\1\0009\0\2\0D\0\1\0\18codeium#Clear\afn\bvimü\1\1\0\6\0\16\0!6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0003\4\5\0005\5\6\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\a\0003\4\b\0005\5\t\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\n\0003\4\v\0005\5\f\0B\0\5\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\r\0003\4\14\0005\5\15\0B\0\5\1K\0\1\0\1\0\2\vsilent\2\texpr\2\0\n<c-x>\1\0\2\vsilent\2\texpr\2\0\n<c-,>\1\0\2\vsilent\2\texpr\2\0\n<c-;>\1\0\2\vsilent\2\texpr\2\0\n<C-g>\6i\bset\vkeymap\bvim\0", "config", "codeium.vim")
-time([[Config for codeium.vim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
 -- Config for: aerial.nvim
 time([[Config for aerial.nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vaerial\frequire\0", "config", "aerial.nvim")
 time([[Config for aerial.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
--- Config for: conform.nvim
-time([[Config for conform.nvim]], true)
-try_loadstring("\27LJ\2\nU\0\0\4\0\5\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\2B\0\2\1K\0\1\0\21formatters_by_ft\1\0\0\nsetup\fconform\frequire\0", "config", "conform.nvim")
-time([[Config for conform.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

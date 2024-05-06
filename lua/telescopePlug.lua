@@ -7,6 +7,5 @@ require("telescope").setup({
 vim.keymap.set("n", "<leader><leader>", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.grep_string, {})
 vim.keymap.set("n", "<leader>bb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>p", builtin.commands, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "T", builtin.colorscheme, {})

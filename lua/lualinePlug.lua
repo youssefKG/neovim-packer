@@ -1,16 +1,18 @@
 local status, lualine = pcall(require, "lualine")
+
 if not status then
-	return
+	return "hel"
 end
 
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "onedark",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 		disabled_filetypes = {},
 	},
+
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
