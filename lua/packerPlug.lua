@@ -31,7 +31,7 @@ return require("packer").startup(function(use)
 	----------------------------Editor----------------------------
 
 	-----------------------------AI Assistant---------------------------
-	use({ "Exafunction/codeium.vim" })
+	-- use({ "Exafunction/codeium.vim" })
 	-----------------------------AI Assistant---------------------------
 
 	-----------------------------LSP(autoComplete)-------------------------------
@@ -96,7 +96,7 @@ return require("packer").startup(function(use)
 			require("colorizer").setup({})
 		end,
 	})
-	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+	-- use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 	use("folke/zen-mode.nvim")
 	use("p00f/nvim-ts-rainbow")
 	use("lukas-reineke/indent-blankline.nvim")

@@ -129,4 +129,4 @@ vim.g.everforest_background = "hard"
 -- vim.cmd("colorscheme everforest")
 -- Lua initialization file
 -- setup must be called before loading
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme rose-pine")
