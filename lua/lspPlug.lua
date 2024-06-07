@@ -2,6 +2,16 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 local opts = { noremap = true, silent = true }
 local lsp_kind = require("lspkind")
+local languageServers = {
+	"lua_ls",
+	"tsserver",
+	"clangd",
+	"jdtls",
+	"prismals",
+	"eslint",
+	"prismals",
+	"tailwindcss",
+}
 -- setup your lsp servers as usual
 
 require("mason").setup()
@@ -17,7 +27,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
 -- after the language server attaches to the current buffer
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "tsserver", "clangd", "cssls", "jdtls", "prismals" },
+	ensure_installed = { "lua_ls", "tsserver", "clangd", "cssls", "jdtls", "prismals", "eslint" },
 })
 
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -70,14 +80,17 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<c-.>", "<cmd>Lspsaga code_action<Cr>", opts)
 end
 
-lspconfig.tsserver.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.eslint.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.tailwindcss.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.lua_ls.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.cssls.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.clangd.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.jdtls.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.prismals.setup({ capabilities = capabilities, on_attach = on_attach })
+for _, value in pairs(languageServers) do
+	lspconfig[value].setup({ capabilities = capabilities, on_attach = on_attach })
+end
+-- lspconfig.tsserver.setup({ capabilities = capabilities, on_attach = on_attach })
+-- lspconfig.eslint.setup({ capabilities = capabilities, on_attach = on_attach })
+-- lspconfig.tailwindcss.setup({ capabilities = capabilities, on_attach = on_attach })
+-- lspconfig.lua_ls.setup({ capabilities = capabilities, on_attach = on_attach })
+-- lspconfig.cssls.setup({ capabilities = capabilities, on_attach = on_attach })
+-- lspconfig.clangd.setup({ capabilities = capabilities, on_attach = on_attach })
+-- lspconfig.jdtls.setup({ capabilities = capabilities, on_attach = on_attach })
+-- lspconfig.prismals.setup({ capabilities = capabilities, on_attach = on_attach })
 
 -- autoComplet
 local cmp = require("cmp")

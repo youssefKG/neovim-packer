@@ -31,7 +31,6 @@ return require("packer").startup(function(use)
 	----------------------------Editor----------------------------
 
 	-----------------------------AI Assistant---------------------------
-	-- use({ "Exafunction/codeium.vim" })
 	-----------------------------AI Assistant---------------------------
 
 	-----------------------------LSP(autoComplete)-------------------------------
@@ -72,6 +71,8 @@ return require("packer").startup(function(use)
 	use("sainnhe/gruvbox-material")
 	use("bluz71/vim-nightfly-colors")
 	use("sainnhe/everforest")
+	use("AlexvZyl/nordic.nvim")
+	use("sainnhe/sonokai")
 	---------------------------Colorschemes-----------------------
 
 	-------------------------------UI------------------------------

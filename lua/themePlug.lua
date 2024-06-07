@@ -120,12 +120,16 @@ require("catppuccin").setup({
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 	},
 })
+require("nordic").setup({
+	transparent_bg = true,
+})
 
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_transparent_background = 1
 -- vim.cmd("colorscheme gruvbox-material")
 vim.g.everforest_transparent_background = 1
 vim.g.everforest_background = "hard"
+vim.g.sonokai_transparent_background = 1
 -- vim.cmd("colorscheme everforest")
 -- Lua initialization file
 -- setup must be called before loading
