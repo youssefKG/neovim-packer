@@ -28,6 +28,7 @@ return require("packer").startup(function(use)
 			require("nvim-autopairs").setup({})
 		end,
 	})
+
 	----------------------------Editor----------------------------
 
 	-----------------------------AI Assistant---------------------------
@@ -41,12 +42,14 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
-	use({ "nvimdev/lspsaga.nvim" })
+	use("mfussenegger/nvim-jdtls")
+	use("nvimdev/lspsaga.nvim")
 	use("saadparwaiz1/cmp_luasnip")
 	use("hrsh7th/cmp-vsnip")
 	use("onsails/lspkind.nvim")
 	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
+	-- use("nvim-java/nvim-java")
 	-----------------------------LSP-------------------------------
 
 	-----------------------------Fuzzy Finder(telescope)---------------------------
@@ -73,6 +76,9 @@ return require("packer").startup(function(use)
 	use("sainnhe/everforest")
 	use("AlexvZyl/nordic.nvim")
 	use("sainnhe/sonokai")
+	use("rebelot/kanagawa.nvim")
+	-- If you are using Packer
+	use("shaunsingh/nord.nvim")
 	---------------------------Colorschemes-----------------------
 
 	-------------------------------UI------------------------------
@@ -102,5 +108,13 @@ return require("packer").startup(function(use)
 	use("p00f/nvim-ts-rainbow")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("luochen1990/rainbow")
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
 	------------------------------UI-------------------------------
 end)

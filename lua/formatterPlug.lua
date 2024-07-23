@@ -3,16 +3,19 @@ require("conform").setup({
 		lua = { "stylua" },
 		python = { "isort", "black" },
 		javascript = { "prettier" },
+		javascriptreact = { "prettier", "prettierd" },
 		typescript = { "prettier" },
-		typescriptreact = { "prettier" },
+		typescriptreact = { "prettierd" },
 		json = { "prettier" },
 		css = { "prettier" },
 		html = { "prettier" },
 		c = { "clang-format", "ast-grep" },
-		java = { "jdtls", "ast-grep" },
+		java = { "google-java-format" },
 		prisma = { "prismals" },
+		markdown = { "prettier" },
 	},
 })
+
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	callback = function(args)

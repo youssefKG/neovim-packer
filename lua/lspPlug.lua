@@ -1,20 +1,48 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = {
+	workspace = {
+		configuration = true,
+	},
+	textDocument = {
+		completion = {
+			completionItem = {
+				snippetSupport = true,
+			},
+		},
+	},
+}
 local lspconfig = require("lspconfig")
 local opts = { noremap = true, silent = true }
 local lsp_kind = require("lspkind")
+
+require("mason").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"lua_ls",
+		"tsserver",
+		"clangd",
+		"cssls",
+		"prismals",
+		"eslint",
+		"ast_grep",
+		"jdtls",
+	},
+})
+
+require("luasnip.loaders.from_vscode").lazy_load({
+	exclude = { "javascript", "typscript", "typescriptreact" },
+})
+
 local languageServers = {
 	"lua_ls",
 	"tsserver",
-	"clangd",
-	"jdtls",
 	"prismals",
 	"eslint",
 	"prismals",
 	"tailwindcss",
+	"cssls",
+	"jdtls",
 }
 -- setup your lsp servers as usual
-
-require("mason").setup()
 
 -- LSP Mappings + Settings -----------------------------------------------------
 -- modified from: https://github.com/neovim/nvim-lspconfig#suggested-configuration
@@ -25,12 +53,6 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-
-require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "tsserver", "clangd", "cssls", "jdtls", "prismals", "eslint" },
-})
-
-require("luasnip.loaders.from_vscode").lazy_load()
 
 local sign = function(opts)
 	vim.fn.sign_define(opts.name, {
@@ -93,6 +115,20 @@ end
 -- lspconfig.prismals.setup({ capabilities = capabilities, on_attach = on_attach })
 
 -- autoComplet
+
+lspconfig.jdtls.setup({ capabilities = capabilities, on_attach = on_attach })
+local config = {
+	-- vim.fn.expand("~\\Downloads\\jdt-language-server-1.9.0-202203031534\\bin\\jdtls"),
+	-- vim.fn.expand("~/AppData/Local/nvim-data/mason/bin/jdtls.cmd"),
+	cmd = { vim.fn.expand("~/AppData/Local/nvim-data/mason/bin/jdtls.cmd") },
+	root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
+	capabilities = capabilities,
+	on_attach = on_attach,
+}
+-- -- C:\Users\sss\Downloads\jdt-language-server-latest (1).tar.gz\bin
+
+require("jdtls").start_or_attach(config)
+
 local cmp = require("cmp")
 cmp.setup({
 	snippet = {

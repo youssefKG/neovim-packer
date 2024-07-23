@@ -124,12 +124,20 @@ require("nordic").setup({
 	transparent_bg = true,
 })
 
+-- Default options:
+require("kanagawa").setup({
+	commentStyle = { italic = false },
+	keywordStyle = { italic = false },
+	transparent = true, -- do not set background color
+})
+
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_transparent_background = 1
 -- vim.cmd("colorscheme gruvbox-material")
 vim.g.everforest_transparent_background = 1
 vim.g.everforest_background = "hard"
 vim.g.sonokai_transparent_background = 1
+vim.nord_disable_background = true
 -- vim.cmd("colorscheme everforest")
 -- Lua initialization file
 -- setup must be called before loading

@@ -14,7 +14,16 @@ require("nvim-treesitter.configs").setup({
 		enable_rename = true,
 		enable_close = true,
 		enable_close_on_slash = true,
-		filetypes = { "html", "xml", "typescript", "tsx", "javascriptreact", "javascript", "typescriptreact" },
+		filetypes = {
+			"html",
+			"xml",
+			"typescript",
+			"tsx",
+			"javascriptreact",
+			"javascript",
+			"typescriptreact",
+			"markdown",
+		},
 	},
 	highlight = {
 		enable = true,

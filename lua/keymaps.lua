@@ -5,9 +5,11 @@ vim.g.mapleader = " "
 
 ---------------------mods navigation --------------------
 keymap("i", "jk", "<Esc>", opts) --insert mode to normal mode
+keymap("i", ",,", "<Esc>", opts)
 keymap("c", "jk", "<Esc>", opts) -- from command mode to normal mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+keymap("t", "jk", "<Esc>", opts)
 ---------------------mods navigation --------------------
 
 --------------------- windiow navitation --------------------
@@ -55,7 +57,7 @@ keymap("n", "<leader>bp", ":bn <CR>", opts)
 -------------------- buffers --------------------
 
 -------------------- neotree --------------------
-vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts) -- toogle neotree explore
+vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>Neotree toggle float<CR>", opts) -- toogle neotree explore
 ---------------------- neotree --------------------
 
 --------------------UndoTree -------------------
