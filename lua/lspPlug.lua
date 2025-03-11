@@ -18,13 +18,13 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
-		"tsserver",
-		"clangd",
+		"ts_ls",
 		"cssls",
 		"prismals",
 		"eslint",
 		"ast_grep",
-		"jdtls",
+		"intelephense",
+		"php-cs-fixer",
 	},
 })
 
@@ -34,13 +34,13 @@ require("luasnip.loaders.from_vscode").lazy_load({
 
 local languageServers = {
 	"lua_ls",
-	"tsserver",
+	"ts_ls",
 	"prismals",
 	"eslint",
 	"prismals",
 	"tailwindcss",
 	"cssls",
-	"jdtls",
+	"intelephense",
 }
 -- setup your lsp servers as usual
 
@@ -105,6 +105,12 @@ end
 for _, value in pairs(languageServers) do
 	lspconfig[value].setup({ capabilities = capabilities, on_attach = on_attach })
 end
+
+lspconfig.intelephense.setup({
+	root_dir = function()
+		return vim.loop.cwd()
+	end,
+})
 -- lspconfig.tsserver.setup({ capabilities = capabilities, on_attach = on_attach })
 -- lspconfig.eslint.setup({ capabilities = capabilities, on_attach = on_attach })
 -- lspconfig.tailwindcss.setup({ capabilities = capabilities, on_attach = on_attach })
@@ -116,7 +122,7 @@ end
 
 -- autoComplet
 
-lspconfig.jdtls.setup({ capabilities = capabilities, on_attach = on_attach })
+-- lspconfig.jdtls.setup({ capabilities = capabilities, on_attach = on_attach })
 local config = {
 	-- vim.fn.expand("~\\Downloads\\jdt-language-server-1.9.0-202203031534\\bin\\jdtls"),
 	-- vim.fn.expand("~/AppData/Local/nvim-data/mason/bin/jdtls.cmd"),
@@ -127,7 +133,7 @@ local config = {
 }
 -- -- C:\Users\sss\Downloads\jdt-language-server-latest (1).tar.gz\bin
 
-require("jdtls").start_or_attach(config)
+-- require("jdtls").start_or_attach(config)
 
 local cmp = require("cmp")
 cmp.setup({

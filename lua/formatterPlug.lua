@@ -5,7 +5,7 @@ require("conform").setup({
 		javascript = { "prettier" },
 		javascriptreact = { "prettier", "prettierd" },
 		typescript = { "prettier" },
-		typescriptreact = { "prettierd" },
+		typescriptreact = { "prettier" },
 		json = { "prettier" },
 		css = { "prettier" },
 		html = { "prettier" },
@@ -13,6 +13,7 @@ require("conform").setup({
 		java = { "google-java-format" },
 		prisma = { "prismals" },
 		markdown = { "prettier" },
+		php = { "php_cs_fixer" },
 	},
 })
 
