@@ -18,6 +18,16 @@ keymap("n", "<C-j>", "<C-w>j", opts) --navigate to down window
 keymap("n", "<C-k>", "<C-w>k", opts) --navigate to up window
 keymap("n", "<C-l>", "<C-w>l", opts) --navigate to right window
 --------------------- windiow navitation  ---------------------
+---
+---------------------Copy -------------------------------------
+keymap("v", "<C-c>", '"+y', opts)
+keymap("n", "yy", 'vV"+y', opts)
+keymap("v", "y", '"+y', opts)
+---------------------Copy -------------------------------------
+
+---------------------- Past ------------------------------------
+keymap("n", "p", '"+p', opts)
+---------------------- Past ------------------------------------
 
 --------------------- yank --------------------
 keymap("n", "yw", "yiw", opts)
@@ -57,7 +67,7 @@ keymap("n", "<leader>bp", ":bn <CR>", opts)
 -------------------- buffers --------------------
 
 -------------------- neotree --------------------
-vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>Neotree toggle float<CR>", opts) -- toogle neotree explore
+vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>Neotree toggle float <CR>", opts) -- toogle neotree explore
 ---------------------- neotree --------------------
 
 --------------------UndoTree -------------------

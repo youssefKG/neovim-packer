@@ -23,8 +23,8 @@ require("mason-lspconfig").setup({
 		"prismals",
 		"eslint",
 		"ast_grep",
+		"tailwindcss",
 		"intelephense",
-		"php-cs-fixer",
 	},
 })
 
@@ -100,6 +100,12 @@ local on_attach = function(client, bufnr)
 	end, bufopts)
 	vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 	vim.keymap.set("n", "<c-.>", "<cmd>Lspsaga code_action<Cr>", opts)
+	vim.api.nvim_create_autocmd("BufWritePost", {
+		pattern = { "*.php" },
+		callback = function(ev)
+			vim.lsp.buf.format()
+		end,
+	})
 end
 
 for _, value in pairs(languageServers) do
@@ -111,29 +117,15 @@ lspconfig.intelephense.setup({
 		return vim.loop.cwd()
 	end,
 })
--- lspconfig.tsserver.setup({ capabilities = capabilities, on_attach = on_attach })
--- lspconfig.eslint.setup({ capabilities = capabilities, on_attach = on_attach })
--- lspconfig.tailwindcss.setup({ capabilities = capabilities, on_attach = on_attach })
--- lspconfig.lua_ls.setup({ capabilities = capabilities, on_attach = on_attach })
--- lspconfig.cssls.setup({ capabilities = capabilities, on_attach = on_attach })
--- lspconfig.clangd.setup({ capabilities = capabilities, on_attach = on_attach })
--- lspconfig.jdtls.setup({ capabilities = capabilities, on_attach = on_attach })
--- lspconfig.prismals.setup({ capabilities = capabilities, on_attach = on_attach })
-
 -- autoComplet
 
 -- lspconfig.jdtls.setup({ capabilities = capabilities, on_attach = on_attach })
 local config = {
-	-- vim.fn.expand("~\\Downloads\\jdt-language-server-1.9.0-202203031534\\bin\\jdtls"),
-	-- vim.fn.expand("~/AppData/Local/nvim-data/mason/bin/jdtls.cmd"),
 	cmd = { vim.fn.expand("~/AppData/Local/nvim-data/mason/bin/jdtls.cmd") },
 	root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
 	capabilities = capabilities,
 	on_attach = on_attach,
 }
--- -- C:\Users\sss\Downloads\jdt-language-server-latest (1).tar.gz\bin
-
--- require("jdtls").start_or_attach(config)
 
 local cmp = require("cmp")
 cmp.setup({

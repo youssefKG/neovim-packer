@@ -1,0 +1,1 @@
+local yazi = require("yazi")
