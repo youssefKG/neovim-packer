@@ -16,3 +16,14 @@ vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
 vim.opt.numberwidth = 6
 vim.opt.pumheight = 15
+vim.g.go_doc_keywordprg_enabled = 0
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.syntax = "on"
+vim.filetype.add({
+	extension = {
+		ts = "typescript",
+		tsx = "typescriptreact",
+	},
+})

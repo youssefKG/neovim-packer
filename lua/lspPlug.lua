@@ -22,7 +22,6 @@ require("mason-lspconfig").setup({
 		"cssls",
 		"prismals",
 		"eslint",
-		"ast_grep",
 		"tailwindcss",
 		"intelephense",
 	},
@@ -34,6 +33,7 @@ require("luasnip.loaders.from_vscode").lazy_load({
 
 local languageServers = {
 	"lua_ls",
+	"gopls",
 	"ts_ls",
 	"prismals",
 	"eslint",
@@ -83,8 +83,9 @@ local on_attach = function(client, bufnr)
 	-- Mappings to magical LSP functions!
 	require("luasnip.loaders.from_vscode").lazy_load()
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
+	vim.g.go_doc_keywordprg_enabled = 0
+	vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-	-- vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
 	vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, bufopts)
 	vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
@@ -117,15 +118,6 @@ lspconfig.intelephense.setup({
 		return vim.loop.cwd()
 	end,
 })
--- autoComplet
-
--- lspconfig.jdtls.setup({ capabilities = capabilities, on_attach = on_attach })
-local config = {
-	cmd = { vim.fn.expand("~/AppData/Local/nvim-data/mason/bin/jdtls.cmd") },
-	root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
-	capabilities = capabilities,
-	on_attach = on_attach,
-}
 
 local cmp = require("cmp")
 cmp.setup({

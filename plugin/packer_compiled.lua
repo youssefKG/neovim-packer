@@ -74,12 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["ChatGPT.nvim"] = {
-    config = { "\27LJ\2\ní\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\16api_key_cmd¨\1echo 'rshA626FwkwP8iqBAtpRIT6y90Vdze8_yWQzta9RGp3kdW_r4YLAOs4C7WOtT8nrd4R_tCzFf3T3BlbkFJTz54achqCkLh9xw4HXS4dF3iCT7visUdtuEufri_jkKaLSegKsnNfyibB0jwyXR_pG9EKMzKQA'\nsetup\fchatgpt\frequire\0" },
-    loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/ChatGPT.nvim",
-    url = "https://github.com/jackMort/ChatGPT.nvim"
-  },
   ["Comment.nvim"] = {
     config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0" },
     loaded = true,
@@ -96,11 +90,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/aerial.nvim",
     url = "https://github.com/stevearc/aerial.nvim"
-  },
-  ["ayu-vim"] = {
-    loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/ayu-vim",
-    url = "https://github.com/ayu-theme/ayu-vim"
   },
   catppuccin = {
     loaded = true,
@@ -167,11 +156,6 @@ _G.packer_plugins = {
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
-  ["kanagawa.nvim"] = {
-    loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
-    url = "https://github.com/rebelot/kanagawa.nvim"
-  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -186,13 +170,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["markdown-preview.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
-    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -213,16 +190,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/neovim",
     url = "https://github.com/rose-pine/neovim"
-  },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
-  },
-  ["nordic.nvim"] = {
-    loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/nordic.nvim",
-    url = "https://github.com/AlexvZyl/nordic.nvim"
   },
   ["nui.nvim"] = {
     loaded = true,
@@ -256,11 +223,6 @@ _G.packer_plugins = {
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/nvim-tree/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -281,11 +243,6 @@ _G.packer_plugins = {
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -301,30 +258,15 @@ _G.packer_plugins = {
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/rainbow",
     url = "https://github.com/luochen1990/rainbow"
   },
-  sonokai = {
-    loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/sonokai",
-    url = "https://github.com/sainnhe/sonokai"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/totib/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["trouble.nvim"] = {
+  ["vim-go"] = {
     loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/trouble.nvim",
-    url = "https://github.com/folke/trouble.nvim"
-  },
-  undotree = {
-    loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/undotree",
-    url = "https://github.com/mbbill/undotree"
-  },
-  ["vim-nightfly-colors"] = {
-    loaded = true,
-    path = "/home/totib/.local/share/nvim/site/pack/packer/start/vim-nightfly-colors",
-    url = "https://github.com/bluz71/vim-nightfly-colors"
+    path = "/home/totib/.local/share/nvim/site/pack/packer/start/vim-go",
+    url = "https://github.com/fatih/vim-go"
   },
   ["vim-solarized8"] = {
     loaded = true,
@@ -339,37 +281,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Setup for: markdown-preview.nvim
-time([[Setup for markdown-preview.nvim]], true)
-try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
-time([[Setup for markdown-preview.nvim]], false)
--- Config for: aerial.nvim
-time([[Config for aerial.nvim]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vaerial\frequire\0", "config", "aerial.nvim")
-time([[Config for aerial.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
 time([[Config for nvim-colorizer.lua]], false)
--- Config for: ChatGPT.nvim
-time([[Config for ChatGPT.nvim]], true)
-try_loadstring("\27LJ\2\ní\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\16api_key_cmd¨\1echo 'rshA626FwkwP8iqBAtpRIT6y90Vdze8_yWQzta9RGp3kdW_r4YLAOs4C7WOtT8nrd4R_tCzFf3T3BlbkFJTz54achqCkLh9xw4HXS4dF3iCT7visUdtuEufri_jkKaLSegKsnNfyibB0jwyXR_pG9EKMzKQA'\nsetup\fchatgpt\frequire\0", "config", "ChatGPT.nvim")
-time([[Config for ChatGPT.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Filetype lazy-loads
-time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
-time([[Defining lazy-load filetype autocommands]], false)
-vim.cmd("augroup END")
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
+-- Config for: aerial.nvim
+time([[Config for aerial.nvim]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vaerial\frequire\0", "config", "aerial.nvim")
+time([[Config for aerial.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

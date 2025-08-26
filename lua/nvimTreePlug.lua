@@ -1,20 +1,16 @@
-local function on_attach(buffnr) 
+local function on_attach(buffnr)
+	local api = require("nvim-tree.api")
+	local function opts(desc)
+		return {
+			desc = "nvim-tree: " .. desc,
+			buffer = buffnr,
+			normap = true,
+			silent = true,
+			nowait = true,
+		}
+	end
 
-  local api =require("nvim-tree.api")
-  local function opts(desc)
-    return {
-      desc = "nvim-tree: " .. desc,
-      buffer= buffnr,
-      normap = true,
-      silent= true,
-      nowait = true
-    }
-
-  end
-
-
-  api.config.mappings.defaul_on_attach(buffnr)
-
+	api.config.mappings.defaul_on_attach(buffnr)
 end
 
 require("nvim-tree").setup({
@@ -23,6 +19,7 @@ require("nvim-tree").setup({
 	},
 	view = {
 		width = 30,
+		float = {},
 	},
 	renderer = {
 		group_empty = true,

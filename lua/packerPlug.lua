@@ -15,7 +15,6 @@ return require("packer").startup(function(use)
 	-- auto-tag
 	use("windwp/nvim-ts-autotag")
 	-- nerd tree
-	use("mbbill/undotree")
 	use({
 		"stevearc/aerial.nvim",
 		config = function()
@@ -32,20 +31,20 @@ return require("packer").startup(function(use)
 	----------------------------Editor----------------------------
 
 	-----------------------------AI Assistant---------------------------
-	use({
-		"jackMort/ChatGPT.nvim",
-		config = function()
-			require("chatgpt").setup({
-				api_key_cmd = "echo 'rshA626FwkwP8iqBAtpRIT6y90Vdze8_yWQzta9RGp3kdW_r4YLAOs4C7WOtT8nrd4R_tCzFf3T3BlbkFJTz54achqCkLh9xw4HXS4dF3iCT7visUdtuEufri_jkKaLSegKsnNfyibB0jwyXR_pG9EKMzKQA'",
-			})
-		end,
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"folke/trouble.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	})
+	-- use({
+	-- 	"jackMort/ChatGPT.nvim",
+	-- 	config = function()
+	-- 		require("chatgpt").setup({
+	-- 			api_key_cmd = "echo 'rshA626FwkwP8iqBAtpRIT6y90Vdze8_yWQzta9RGp3kdW_r4YLAOs4C7WOtT8nrd4R_tCzFf3T3BlbkFJTz54achqCkLh9xw4HXS4dF3iCT7visUdtuEufri_jkKaLSegKsnNfyibB0jwyXR_pG9EKMzKQA'",
+	-- 		})
+	-- 	end,
+	-- 	requires = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"folke/trouble.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- })
 	-----------------------------AI Assistant---------------------------
 
 	-----------------------------LSP(autoComplete)-------------------------------
@@ -63,7 +62,7 @@ return require("packer").startup(function(use)
 	use("onsails/lspkind.nvim")
 	use("L3MON4D3/LuaSnip")
 	use("rafamadriz/friendly-snippets")
-	-- use("nvim-java/nvim-java")
+	use("fatih/vim-go")
 	-----------------------------LSP-------------------------------
 
 	-----------------------------Fuzzy Finder(telescope)---------------------------
@@ -82,17 +81,15 @@ return require("packer").startup(function(use)
 	use("ellisonleao/gruvbox.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("lifepillar/vim-solarized8")
-	use("navarasu/onedark.nvim")
+	-- use("navarasu/onedark.nvim")
 	use("rose-pine/neovim")
-	use("ayu-theme/ayu-vim")
+	-- use("ayu-theme/ayu-vim")
 	use("sainnhe/gruvbox-material")
-	use("bluz71/vim-nightfly-colors")
+	-- use("bluz71/vim-nightfly-colors")
 	use("sainnhe/everforest")
-	use("AlexvZyl/nordic.nvim")
-	use("sainnhe/sonokai")
-	use("rebelot/kanagawa.nvim")
+	-- use("sainnhe/sonokai")
+	-- use("rebelot/kanagawa.nvim")
 	-- If you are using Packer
-	use("shaunsingh/nord.nvim")
 	---------------------------Colorschemes-----------------------
 
 	-------------------------------UI------------------------------
@@ -101,7 +98,6 @@ return require("packer").startup(function(use)
 		opt = true,
 	} }) -- lualine
 	use("nvim-tree/nvim-web-devicons")
-	use("nvim-tree/nvim-tree.lua")
 	use({
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
@@ -118,18 +114,10 @@ return require("packer").startup(function(use)
 			require("colorizer").setup({})
 		end,
 	})
-	-- use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 	use("folke/zen-mode.nvim")
 	use("p00f/nvim-ts-rainbow")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("luochen1990/rainbow")
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
-	})
+
 	------------------------------UI-------------------------------
 end)

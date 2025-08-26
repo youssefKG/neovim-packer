@@ -10,10 +10,12 @@ require("conform").setup({
 		css = { "prettier" },
 		html = { "prettier" },
 		c = { "clang-format", "ast-grep" },
+		h = { "clang-format", "ast-grep" },
 		java = { "google-java-format" },
 		prisma = { "prismals" },
 		markdown = { "prettier" },
 		php = { "php_cs_fixer" },
+		go = { "ast_grep" },
 	},
 })
 
