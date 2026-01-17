@@ -1,7 +1,6 @@
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
-		python = { "isort", "black" },
 		javascript = { "prettier" },
 		javascriptreact = { "prettier", "prettierd" },
 		typescript = { "prettier" },
@@ -9,13 +8,14 @@ require("conform").setup({
 		json = { "prettier" },
 		css = { "prettier" },
 		html = { "prettier" },
-		c = { "clang-format", "ast-grep" },
 		h = { "clang-format", "ast-grep" },
 		java = { "google-java-format" },
 		prisma = { "prismals" },
 		markdown = { "prettier" },
 		php = { "php_cs_fixer" },
 		go = { "ast_grep" },
+		c = { "clang-format", "ast-grep" },
+		python = { "autoflake" },
 	},
 })
 

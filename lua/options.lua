@@ -21,9 +21,4 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.syntax = "on"
-vim.filetype.add({
-	extension = {
-		ts = "typescript",
-		tsx = "typescriptreact",
-	},
-})
+vim.opt.termguicolors = true

@@ -37,6 +37,7 @@
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all" (the listed parsers MUST always be installed)
 	ensure_installed = {
+		"go",
 		"c",
 		"lua",
 		"vim",
@@ -49,6 +50,7 @@ require("nvim-treesitter.configs").setup({
 		"php",
 		"java",
 		"todotxt",
+		"tsx",
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
@@ -99,6 +101,7 @@ require("nvim-treesitter.configs").setup({
 			"typescriptreact",
 			"markdown",
 			"php",
+			"go",
 		},
 	},
 })

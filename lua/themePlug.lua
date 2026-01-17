@@ -121,7 +121,6 @@ require("catppuccin").setup({
 	},
 })
 
-
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_transparent_background = 1
 -- vim.cmd("colorscheme gruvbox-material")
@@ -132,4 +131,4 @@ vim.nord_disable_background = true
 -- vim.cmd("colorscheme everforest")
 -- Lua initialization file
 -- setup must be called before loading
-vim.cmd("colorscheme gruvbox-material")
+vim.cmd("colorscheme rose-pine")

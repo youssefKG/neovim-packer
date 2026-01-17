@@ -14,7 +14,7 @@ local lspconfig = require("lspconfig")
 local opts = { noremap = true, silent = true }
 local lsp_kind = require("lspkind")
 
-require("mason").setup()
+-- require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
@@ -24,6 +24,9 @@ require("mason-lspconfig").setup({
 		"eslint",
 		"tailwindcss",
 		"intelephense",
+		"gopls",
+		"clangd",
+		"pyright",
 	},
 })
 
@@ -41,6 +44,8 @@ local languageServers = {
 	"tailwindcss",
 	"cssls",
 	"intelephense",
+	"pyright",
+	-- "clangd",
 }
 -- setup your lsp servers as usual
 
@@ -112,6 +117,8 @@ end
 for _, value in pairs(languageServers) do
 	lspconfig[value].setup({ capabilities = capabilities, on_attach = on_attach })
 end
+
+lspconfig["gopls"].setup({ capabilities = capabilities, on_attach = on_attach })
 
 lspconfig.intelephense.setup({
 	root_dir = function()

@@ -8,8 +8,14 @@
 -- })
 --
 --
+
 -- vim.api.nvim_create_autocmd("BufEnter", {
--- 	callback = function()
--- 		vim.option.syntax = "on"
+-- 	pattern = { "*.tsx", "*.ts" },
+-- 	callback = function(args)
+-- 		vim.cmd("syntax on")
+-- 		vim.cmd("TSEnable hightlight")
+-- 		print("hello file tsx")
 -- 	end,
 -- })
+
+--
