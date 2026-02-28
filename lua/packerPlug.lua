@@ -115,9 +115,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("folke/zen-mode.nvim")
-	use("p00f/nvim-ts-rainbow")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("luochen1990/rainbow")
 
 	------------------------------UI-------------------------------
 end)

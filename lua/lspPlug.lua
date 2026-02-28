@@ -24,6 +24,12 @@ require("mason-lspconfig").setup({
 		"eslint",
 		"tailwindcss",
 		"intelephense",
+		"pyright",
+		"autoflake",
+		"stylua",
+		"pylsp",
+		"flake8",
+		"black",
 	},
 })
 
@@ -41,6 +47,9 @@ local languageServers = {
 	"tailwindcss",
 	"cssls",
 	"intelephense",
+	-- "pyright",
+	"pylsp",
+	"flake8",
 }
 -- setup your lsp servers as usual
 

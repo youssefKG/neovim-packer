@@ -14,6 +14,7 @@ vim.opt.foldmethod = "manual"
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
+vim.opt.termguicolors = true
 vim.opt.numberwidth = 6
 vim.opt.pumheight = 15
 vim.g.go_doc_keywordprg_enabled = 0
