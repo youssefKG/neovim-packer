@@ -31,20 +31,19 @@ return require("packer").startup(function(use)
 	----------------------------Editor----------------------------
 
 	-----------------------------AI Assistant---------------------------
-	-- use({
-	-- 	"jackMort/ChatGPT.nvim",
-	-- 	config = function()
-	-- 		require("chatgpt").setup({
-	-- 			api_key_cmd = "echo 'rshA626FwkwP8iqBAtpRIT6y90Vdze8_yWQzta9RGp3kdW_r4YLAOs4C7WOtT8nrd4R_tCzFf3T3BlbkFJTz54achqCkLh9xw4HXS4dF3iCT7visUdtuEufri_jkKaLSegKsnNfyibB0jwyXR_pG9EKMzKQA'",
-	-- 		})
-	-- 	end,
-	-- 	requires = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"folke/trouble.nvim",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- })
+	-- Packer
+	use({
+		"jackMort/ChatGPT.nvim",
+		config = function()
+			require("chatgpt").setup()
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"folke/trouble.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
 	-----------------------------AI Assistant---------------------------
 
 	-----------------------------LSP(autoComplete)-------------------------------

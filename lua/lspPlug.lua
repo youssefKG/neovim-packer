@@ -10,7 +10,7 @@ local capabilities = {
 		},
 	},
 }
-local lspconfig = require("lspconfig")
+-- local lspconfig = require("lspconfig")
 local opts = { noremap = true, silent = true }
 local lsp_kind = require("lspkind")
 
@@ -23,13 +23,9 @@ require("mason-lspconfig").setup({
 		"prismals",
 		"eslint",
 		"tailwindcss",
-		"intelephense",
 		"pyright",
-		"autoflake",
 		"stylua",
 		"pylsp",
-		"flake8",
-		"black",
 	},
 })
 
@@ -46,17 +42,11 @@ local languageServers = {
 	"prismals",
 	"tailwindcss",
 	"cssls",
-	"intelephense",
-	-- "pyright",
+	"pyright",
 	"pylsp",
 	"flake8",
 }
 -- setup your lsp servers as usual
-
--- LSP Mappings + Settings -----------------------------------------------------
--- modified from: https://github.com/neovim/nvim-lspconfig#suggested-configuration
--- Basic diagnostic mappings, these will navigate to or display diagnostics
--- vim.keymap.set("n", "<leader>d", vim.diagnostic.goto_next, opts)
 
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
 
@@ -89,6 +79,7 @@ vim.diagnostic.config({
 })
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 local on_attach = function(client, bufnr)
+	print(client, bufnr)
 	-- Mappings to magical LSP functions!
 	require("luasnip.loaders.from_vscode").lazy_load()
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -110,23 +101,11 @@ local on_attach = function(client, bufnr)
 	end, bufopts)
 	vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 	vim.keymap.set("n", "<c-.>", "<cmd>Lspsaga code_action<Cr>", opts)
-	vim.api.nvim_create_autocmd("BufWritePost", {
-		pattern = { "*.php" },
-		callback = function(ev)
-			vim.lsp.buf.format()
-		end,
-	})
 end
 
 for _, value in pairs(languageServers) do
-	lspconfig[value].setup({ capabilities = capabilities, on_attach = on_attach })
+	vim.lsp.config(value, { capabilities = capabilities, on_attach = on_attach })
 end
-
-lspconfig.intelephense.setup({
-	root_dir = function()
-		return vim.loop.cwd()
-	end,
-})
 
 local cmp = require("cmp")
 cmp.setup({
