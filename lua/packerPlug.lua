@@ -33,10 +33,6 @@ return require("packer").startup(function(use)
 	-----------------------------AI Assistant---------------------------
 	-- Packer
 	use({
-		"jackMort/ChatGPT.nvim",
-		config = function()
-			require("chatgpt").setup()
-		end,
 		requires = {
 			"MunifTanjim/nui.nvim",
 			"nvim-lua/plenary.nvim",
@@ -80,14 +76,14 @@ return require("packer").startup(function(use)
 	use("ellisonleao/gruvbox.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("lifepillar/vim-solarized8")
-	-- use("navarasu/onedark.nvim")
+	use("navarasu/onedark.nvim")
 	use("rose-pine/neovim")
-	-- use("ayu-theme/ayu-vim")
+	use("ayu-theme/ayu-vim")
 	use("sainnhe/gruvbox-material")
-	-- use("bluz71/vim-nightfly-colors")
+	use("bluz71/vim-nightfly-colors")
 	use("sainnhe/everforest")
-	-- use("sainnhe/sonokai")
-	-- use("rebelot/kanagawa.nvim")
+	use("sainnhe/sonokai")
+	use("rebelot/kanagawa.nvim")
 	-- If you are using Packer
 	---------------------------Colorschemes-----------------------
 

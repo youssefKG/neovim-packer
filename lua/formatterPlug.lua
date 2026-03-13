@@ -9,12 +9,12 @@ require("conform").setup({
 		json = { "prettier" },
 		css = { "prettier" },
 		html = { "prettier" },
-		c = { "clang-format", "ast-grep" },
-		h = { "clang-format", "ast-grep" },
+		c = { "black" },
+		h = { "black" },
 		prisma = { "prismals" },
 		markdown = { "prettier" },
 		php = { "php_cs_fixer" },
-		go = { "ast_grep" },
+		go = { "ast-grep" },
 	},
 })
 
