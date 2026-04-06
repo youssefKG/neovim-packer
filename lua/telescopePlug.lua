@@ -17,7 +17,6 @@ require("telescope").setup({
 		},
 		layout_config = {
 			horizontal = {
-				height = 0.9,
 				preview_cutoff = 40,
 				prompt_position = "bottom",
 				width = 0.8,
@@ -42,6 +41,10 @@ require("telescope").setup({
 	},
 })
 
+function find_files()
+	builtin.find_files({ layout_strategy = "vertical", layout_config = { width = 0.5 } })
+end
+
 -- require("telescope").setup({
 -- 	defaults = {
 -- 		file_ignore_patterns = { "node_modules" },
@@ -61,7 +64,7 @@ require("telescope").setup({
 -- 	},
 -- })
 
-keymap("n", "<leader><leader>", builtin.find_files, opts)
+keymap("n", "<leader><leader>", find_files, opts)
 keymap("n", "<leader>bb", builtin.buffers, opts)
 keymap("n", "<leader>fh", builtin.help_tags, opts)
 keymap("n", "T", builtin.colorscheme, opts)
